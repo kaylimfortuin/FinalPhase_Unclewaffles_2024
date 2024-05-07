@@ -22,6 +22,16 @@
                 height: 360px;
             }
     }
+    @media only screen and (max-width: 700px) {
+    #fileTable {
+      table-layout: fixed; /* Fix table layout for smaller screens */
+    }
+    #fileTable th td{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; /* Truncate content with ellipsis */
+    }
+  }
     </style>
 </head>
 
@@ -90,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <table>
+            <table id="scheduleTable">
                 <thead>
                     <tr>
                         <th>Time:</th>
@@ -242,12 +252,12 @@
             </div>
             <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
                 <div class="col-lg-8">
-                    <div class="row g-3 p-lg-5 p-4 bg-white theme-shadow" id="chat">
+                    <div class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
                         <div class="form-group col-lg-6">
-                            <input type="text" class="form-control" placeholder="Enter first name" id="username-input" name="name" required>
+                            <input type="text" class="form-control" placeholder="Enter first name" id="username-input" required>
                         </div>
                         <div class="form-group col-lg-12">
-                            <textarea name="message" rows="5" class="form-control" placeholder="Enter Message" id="message-input" name="message" required></textarea>
+                            <textarea type="text" rows="5" class="form-control" placeholder="Enter Message" id="message-input" required></textarea>
                         </div>
                         <div class="form-group col-lg-12 d-grid">
                             <button class="btn btn-brand" id="send-button">Send Message</button>
@@ -291,10 +301,10 @@
                             <input type="text" id="searchInput" placeholder="Search by name" class="form-control">
                             <button style="background-color: maroon; color: white; border: 0px;" class="btn btn-brand"  onclick="searchFiles()">Search</button>
                         </div>
-                        <table id="fileTable">
+                        <table id="fileTable" style="width: 100%;">
                             <thead>
                             <tr>
-                                <th>Resource Name</th>
+                                <th style="width: 50%;">Resource Name</th>
                                 <th>Download</th>
                             </tr>
                             </thead>
@@ -541,7 +551,6 @@
     </footer>
 
     <!-- Javascript -->
-    
     <script>
         // Get the video
         var video = document.getElementById("myVideo");
@@ -562,6 +571,6 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="/assets/js/share.js"></script>
-    <script src="discussion.js"></script>
+    <script src="/assets/js/Discussion.js"></script>
 </body>
 </html>

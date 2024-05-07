@@ -156,3 +156,27 @@ let db;
         console.error("Download error: " + event.target.errorCode);
       };
     }
+    function uploadFile() {
+      const fileInput = document.getElementById("fileInput");
+      const file = fileInput.files[0];
+    
+      // Check if a file is selected
+      if (!file) {
+        console.error("No file selected");
+        return;
+      }
+    
+      // Validate file type (PDF only)
+      if (file.type !== "application/pdf") {
+        alert("Only PDF files are allowed!");
+        fileInput.value = ""; // Clear the file input
+        return;
+      }
+    
+      const transaction = db.transaction(["files"], "readwrite");
+      const objectStore = transaction.objectStore("files");
+    
+      const request = objectStore.add({ name: file.name, type: file.type, size: file.size, data: file });
+    
+      // ... rest of uploadFile function logic ...
+    }
