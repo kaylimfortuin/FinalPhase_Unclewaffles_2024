@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CTU-Buddy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        @media (max-width:700px){
+            body{
+                overflow: scroll;
+            }
+            #myVideo{
+                width: 360px;
+                height: 360px;
+            }
+    }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">
+                <img src="/images/CTU-Students.png" alt="" width="100" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timetable">Timetable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#discussion">Discussion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 data-aos="fade-left" class="text-uppercase text-white fw-semibold display-1">Welcome to CTU-Buddy</h1>
+                    <div data-aos="fade-up" data-aos-delay="50">
+                        <a href="#about" class="btn btn-brand me-2">About Us</a>
+                        <a href="#contact" class="btn btn-light ms-2">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timetable -->
+    <section id="timetable" class="section-padding border-top">
+        <div class="container" style="overflow-x: auto;">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Timetable</h1>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time:</th>
+                        <th>Outcome:</th>
+                        <th>Monday:</th>
+                        <th>Tuesday:</th>
+                        <th>Wednesday:</th>
+                        <th>Thurday:</th>
+                        <th>Friday:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>  
+                    <td rowspan="2">8:00-9:00</td>
+                    <td>Module</td>
+                    <td>RD412</td>
+                    <td>RD412</td>
+                    <td>ENA412</td>
+                    <td>ENA412</td>
+                    <td rowspan="2">Group/Research</td>
+                </tr> 
+                <tr>
+                    <td>Activity</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                </tr>
+                <tr>  
+                    <td rowspan="2">9:00-10:00</td>
+                    <td>Module</td>
+                    <td>RD412</td>
+                    <td>RD412</td>
+                    <td>ENA412</td>
+                    <td>ENA412</td>
+                    <td>CF412</td>
+                </tr>
+                <tr>
+                    <td>Activity</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Theory</td>
+                </tr> 
+                <tr>  
+                    <td rowspan="2">10:00-11:00</td>
+                    <td>Module</td>
+                    <td>RD412</td>
+                    <td>RD412</td>
+                    <td>ENA412</td>
+                    <td>ENA412</td>
+                    <td>CF412</td>
+                </tr> 
+                <tr>
+                    <td>Activity</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Practical</td>
+                </tr>
+                <tr>  
+                    <td rowspan="2">11:00-12:00</td>
+                    <td>Module</td>
+                    <td rowspan=2>Group/Research</td>
+                    <td rowspan="2">Group/Research</td>
+                    <td>ENA412</td>
+                    <td rowspan="2">Group/Research</td>
+                    <td>CF412</td>
+                </tr>
+                <tr>
+                    <td>Activity</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                </tr> 
+                <tr>  
+                    <td rowspan="2">12:00-13:00</td>
+                    <td>Module</td>
+                    <td colspan="5"></td>
+                    
+                </tr> 
+                <tr>
+                    <td>Activity</td>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>  
+                    <td rowspan="2">13:00-14:00</td>
+                    <td>Module</td>
+                    <td>CW412</td>
+                    <td rowspan="6">Focus on International Exams</td>
+                    <td>ENA412</td>
+                    <td>ENA412</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Activity</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Practical</td>
+                    <td></td>
+                </tr> 
+                <tr>  
+                    <td rowspan="2">14:00-15:00</td>
+                    <td>Module</td>
+                    <td>CW412</td>
+                    <td>ENA412</td>
+                    <td>ENA412</td>
+                    <td></td>
+                </tr> 
+                <tr>
+                    <td>Activity</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Practical</td>
+                    <td></td>
+                </tr>
+                <tr>  
+                    <td rowspan="2">15:00-16:00</td>
+                    <td>Module</td>
+                    <td>CW412</td>
+                    <td>ENA412</td>
+                    <td>ENA412</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Activity</td>
+                    <td>Theory</td>
+                    <td>Practical</td>
+                    <td>Practical</td>
+                    <td></td>
+                </tr> 
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Discussion -->
+    <section class="section-padding bg-light" id="discussion">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4  fw-semibold">Discussions
+                        </h1>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
+                <div class="col-lg-8">
+                    <div class="row g-3 p-lg-5 p-4 bg-white theme-shadow" id="chat">
+                        <div class="form-group col-lg-6">
+                            <input type="text" class="form-control" placeholder="Enter first name" id="username-input" name="name" required>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <textarea name="message" rows="5" class="form-control" placeholder="Enter Message" id="message-input" name="message" required></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 d-grid">
+                            <button class="btn btn-brand" id="send-button">Send Message</button>
+                        </div>
+                        <div id="message-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="section-padding bg-light" id="resources">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Share Resources</h1>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
+                <div class="col-lg-8">
+                    <form id="container" class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
+                        <select id="Modules" name="Programming Foundation"  class="form-control">
+                            <optgroup label="Modules"  class="form-control">
+                                <p>Select</p>
+                                <option value="Modules">RD412</option>
+                                <option value="Modules">CF412</option>
+                                <option value="Modules">ENA412</option>
+                                <option value="Modules">CW412</option>
+                            </optgroup>
+                        </select>
+                        <div class="form-group col-lg-12">
+                            <label for="myfile" class="form-control">Select a file: <input type="file" id="fileInput" name="myfile" class="form-control"></label>
+                            <div class="form-group col-lg-12 d-grid">
+                                <button class="btn btn-brand" style="width: 107.66px;" onclick="uploadFile()">Upload</button>
+                            </div>
+                            <br>
+                            <input type="text" id="searchInput" placeholder="Search by name" class="form-control">
+                            <button style="background-color: maroon; color: white; border: 0px;" class="btn btn-brand"  onclick="searchFiles()">Search</button>
+                        </div>
+                        <table id="fileTable">
+                            <thead>
+                            <tr>
+                                <th>Resource Name</th>
+                                <th>Download</th>
+                            </tr>
+                            </thead>
+                            <tbody id="fileList"></tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">About us</h1>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6" data-aos="fade-down" data-aos-delay="50">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="/Videos/CTU - What we offer.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
+                    <h1>About CTU-Buddy</h1>
+                    <div class="d-flex pt-4 mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-mail-send-fill"></i>
+                        </div>
+                        <div>
+                            <h5>About CTU-Buddy</h5>
+                            <p>CTU-Buddy is an educational platform designed to empower students at CTU Training Solutions. We are a team of passionate individuals dedicated to enhancing your learning experience by providing user-friendly tools and fostering a collaborative learning environment.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-user-5-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Purpose</h5>
+                            <p>CTU-Buddy exists to bridge the gap between students and resources, fostering a collaborative learning environment at CTU. We strive to empower students by providing a platform for connection, knowledge sharing, and academic success.We believe that every CTU student deserves the tools and support to thrive. CTU-Buddy is here to help you connect with classmates, share study materials, stay organized, and achieve your academic goals</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-user-5-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Mission</h5>
+                            <p>CTU-Buddy is dedicated to revolutionizing the educational experience at CTU Training Solutions. Our mission is to provide students with a user-friendly platform that enhances learning, fosters collaboration, and facilitates effective communication between peers and educators. We aim to empower students to manage their schedules efficiently, engage in meaningful discussions, share resources seamlessly, and connect with their academic community effectively. With CTU-Buddy, we strive to contribute to the academic success and personal growth of every student at CTU</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-user-5-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Vision</h5>
+                            <p>At CTU-Buddy, we envision a future where every student at CTU Training Solutions has access to a dynamic and innovative educational platform. Our vision is to create a supportive online environment that promotes lifelong learning, empowers students to excel academically, and fosters a sense of community and belonging. We strive to be a leader in educational technology, continuously evolving to meet the changing needs of our students and educators. With CTU-Buddy, we aim to inspire a passion for learning and enable students to reach their full potential in their academic journey</p>
+                        </div>
+                    </div>-
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section-padding bg-light" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 text-white fw-semibold">Get in touch</h1>
+                        <div class="line bg-white"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
+                <div class="col-lg-8">
+                    <form action="https://formspree.io/f/xqkrggvd" class="row g-3 p-lg-5 p-4 bg-white theme-shadow" method="post">
+                        <div class="form-group col-lg-6">
+                            <input type="text" class="form-control" placeholder="Enter first name" required>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input type="text" class="form-control" placeholder="Enter last name" required>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="email" class="form-control" placeholder="Enter Email address" required>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="text" class="form-control" placeholder="Group name" required>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="text" class="form-control" placeholder="Student number" required>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="text" class="form-control" placeholder="Enter subject" required>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <textarea name="message" rows="5" class="form-control" placeholder="Enter Message" required></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 d-grid">
+                            <button class="btn btn-brand">Send Message</button>
+                        </div>
+                        <input type="hidden" name="_cc" value="kyle11jan@gmail.com, mahlakanye18@gmail.com">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Team Members</h1>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 text-center ">
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="team-member image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="images/IMG_1555.jpeg" alt="">
+                        </div>
+                        <div class="team-member-content">
+                            <h4 class="text-white">Kaylim Fortuin</h4>
+                            <p class="mb-0 text-white">Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
+                    <div class="team-member image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="images/WhatsApp Image 2024-03-25 at 12.51.17 2.jpeg" alt="">
+                        </div>
+                        <div class="team-member-content">
+                            <h4 class="text-white">Mk</h4>
+                            <p class="mb-0 text-white">Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
+                    <div class="team-member image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="images/C9C11ACC-2EA8-44CB-8224-027DD465CD4F 2.jpeg" alt="">
+                        </div>
+                        <div class="team-member-content">
+                            <h4 class="text-white">Kyle Reneke</h4>
+                            <p class="mb-0 text-white">Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="#hero"><img src="/images/CTU-Students.png" alt="" width="100" height="100"></a>
+                        <div class="line"></div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/ctutrainingsolutions/" target="_blank"><i class="ri-instagram-fill"></i></a>
+                            <a href="https://www.facebook.com/CTUTrainingSolutions" target="_blank"><i class="ri-facebook-fill"></i></a>
+                            <a href="https://twitter.com/CTU_Chatz" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">CONTACT</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="https://www.google.com/maps/place/CTU+Training+Solutions+Roodepoort/@-26.1381397,27.7942055,12z/data=!4m10!1m2!2m1!1sCTU+Training+Solutions!3m6!1s0x1e959f7b7787c027:0xd1450a9cd56b62ed!8m2!3d-26.1429775!4d27.8700032!15sChZDVFUgVHJhaW5pbmcgU29sdXRpb25zIgOIAQGSAQ5wcml2YXRlX3NjaG9vbOABAA!16s%2Fg%2F119wnq02v?entry=ttu" target="_blank"> CTU Training Solutions</a></li>
+                            <li><a href="tel:+27 840406220" target="_blank">084 040 6220</a></li>
+                            <li><a href="tel:+27 842605767" target="_blank">084 260 5767</a></li>
+                            <li><a href="tel:+27 731155508" target="_blank">073 115 5508</a></li>
+                            <li><a href="https://ctutraining.ac.za/" target="_blank">ctu.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">Location</h5>
+                        <div class="line"></div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114617.52503203206!2d27.794205508845863!3d-26.13813967284999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959f7b7787c027%3A0xd1450a9cd56b62ed!2sCTU%20Training%20Solutions%20Roodepoort!5e0!3m2!1sen!2sza!4v1712920007718!5m2!1sen!2sza" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="ctu"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-white sticky-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hero">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#timetable">Timetable</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#discussion">Discussion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resources">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#team">Team</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">&copy;CTU-Buddy</p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="mb-0">Designed By Kaylim Fortuin, Kyle Reneke, Mahlakanye Lekganyane</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    
+    <script>
+        // Get the video
+        var video = document.getElementById("myVideo");
+        
+        // Pause and play the video, and change the button text
+        function myFunction() {
+          if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+          } else {
+            video.pause();
+            btn.innerHTML = "Play";
+          }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="/assets/js/share.js"></script>
+    <script src="discussion.js"></script>
+</body>
+</html>
