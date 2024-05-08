@@ -22,16 +22,6 @@
                 height: 360px;
             }
     }
-    @media only screen and (max-width: 700px) {
-    #fileTable {
-      table-layout: fixed; /* Fix table layout for smaller screens */
-    }
-    #fileTable th td{
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis; /* Truncate content with ellipsis */
-    }
-  }
     </style>
 </head>
 
@@ -100,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <table id="scheduleTable">
+            <table>
                 <thead>
                     <tr>
                         <th>Time:</th>
@@ -252,20 +242,19 @@
             </div>
             <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
                 <div class="col-lg-8">
-                    <div class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
+                    <form class="row g-3 p-lg-5 p-4 bg-white theme-shadow" id="chat" action="discussions.php" method="POST">
                         <div class="form-group col-lg-6">
-                            <input type="text" class="form-control" placeholder="Enter first name" id="username-input" required>
+                            <input type="text" class="form-control" placeholder="Enter first name" id="username-input" name="name" required>
                         </div>
                         <div class="form-group col-lg-12">
-                            <textarea type="text" rows="5" class="form-control" placeholder="Enter Message" id="message-input" required></textarea>
+                            <textarea name="message" rows="5" class="form-control" placeholder="Enter Message" id="message-input" required></textarea>
                         </div>
                         <div class="form-group col-lg-12 d-grid">
-                            <button class="btn btn-brand" id="send-button">Send Message</button>
+                            <button class="btn btn-brand" id="send-button" type="submit">Send Message</button>
                         </div>
-                        <div id="message-container"></div>
-                    </div>
-                </div>
-            </div>
+                    </form>
+                </div> 
+            </div>  
         </div>
     </section>
 
@@ -282,14 +271,13 @@
             </div>
             <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
                 <div class="col-lg-8">
-                    <form id="container" class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
-                        <select id="Modules" name="Programming Foundation"  class="form-control">
-                            <optgroup label="Modules"  class="form-control">
-                                <p>Select</p>
-                                <option value="Modules">RD412</option>
-                                <option value="Modules">CF412</option>
-                                <option value="Modules">ENA412</option>
-                                <option value="Modules">CW412</option>
+                    <form id="container" class="row g-3 p-lg-5 p-4 bg-white theme-shadow" action="form_handler.php" method="post" enctype="multipart/form-data">
+                        <select id="Modules" name="Modules" class="form-control">
+                            <optgroup label="Modules" class="form-control">
+                                <option value="RD412">RD412</option>
+                                <option value="CF412">CF412</option>
+                                <option value="ENA412">ENA412</option>
+                                <option value="CW412">CW412</option>
                             </optgroup>
                         </select>
                         <div class="form-group col-lg-12">
@@ -299,18 +287,19 @@
                             </div>
                             <br>
                             <input type="text" id="searchInput" placeholder="Search by name" class="form-control">
-                            <button style="background-color: maroon; color: white; border: 0px;" class="btn btn-brand"  onclick="searchFiles()">Search</button>
+                            <button style="background-color: maroon; color: white; border: 0px;" class="btn btn-brand" onclick="searchFiles()">Search</button>
                         </div>
-                        <table id="fileTable" style="width: 100%;">
+                        <table id="fileTable">
                             <thead>
-                            <tr>
-                                <th style="width: 50%;">Resource Name</th>
-                                <th>Download</th>
-                            </tr>
+                                <tr>
+                                    <th>Resource Name</th>
+                                    <th>Download</th>
+                                </tr>
                             </thead>
                             <tbody id="fileList"></tbody>
                         </table>
                     </form>
+                    
                 </div>
             </div>
         </div>
@@ -551,6 +540,22 @@
     </footer>
 
     <!-- Javascript -->
+        
+    <script>
+        window.onload = function() {
+        fetch('get_messages.php')
+        .then(response => response.json())
+        .then(data => {
+            const messageContainer = document.getElementById('message-container');
+            data.forEach(message => {
+                const div = document.createElement('div');
+                div.textContent = message.name + ': ' + message.message;
+                messageContainer.appendChild(div);
+            });
+        })
+        .catch(error => console.error(error));
+        };
+    </script>
     <script>
         // Get the video
         var video = document.getElementById("myVideo");
@@ -571,6 +576,6 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="/assets/js/share.js"></script>
-    <script src="/assets/js/Discussion.js"></script>
+    <script src="/assets/js/discussion.js"></script>
 </body>
 </html>
