@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->bind_param("ssiss", $module, $fileName, $fileSize, $fileType, $fileDestination);
                 $stmt->execute();
 
-                header("Location: index.php?uploadsuccess");
+                header("Location: index.html#resources?uploadsuccess");
             } else {
                 echo "Your file is too big!";
             }

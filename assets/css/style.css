@@ -264,3 +264,34 @@ td:hover{
     cursor: pointer;
 }
 
+.message {
+    background-color: #f8f8f8; /* Light grey background */
+    border: 1px solid #ddd; /* Grey border */
+    padding: 10px; /* Some padding */
+    margin-bottom: 10px; /* Bottom margin */
+    border-radius: 5px; /* Rounded borders */
+    position: relative; /* Position relative to contain the reply icon */
+}
+
+.message p {
+    margin: 0; /* No margins */
+}
+
+.message small {
+    display: block; /* Display as block */
+    color: #888; /* Grey color */
+    margin-top: 5px; /* Top margin */
+}
+
+i{
+    position: absolute; /* Position absolutely within the message */
+    top: 10px; /* 10px from the top */
+    right: 10px; /* 10px from the right */
+    color: #888; /* Grey color */
+    cursor: pointer; /* Pointer cursor */
+    display: none; /* Hidden by default */
+}
+
+i{
+    display: inline-block; /* Show on hover */
+}

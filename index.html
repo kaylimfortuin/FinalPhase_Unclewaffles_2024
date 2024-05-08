@@ -1,3 +1,4 @@
+ 
 <!doctype html>
 <html lang="en">
 
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         @media (max-width:700px){
             body{
@@ -242,17 +244,41 @@
             </div>
             <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
                 <div class="col-lg-8">
-                    <form class="row g-3 p-lg-5 p-4 bg-white theme-shadow" id="chat" action="discussions.php" method="POST">
-                        <div class="form-group col-lg-6">
-                            <input type="text" class="form-control" placeholder="Enter first name" id="username-input" name="name" required>
-                        </div>
-                        <div class="form-group col-lg-12">
-                            <textarea name="message" rows="5" class="form-control" placeholder="Enter Message" id="message-input" required></textarea>
-                        </div>
-                        <div class="form-group col-lg-12 d-grid">
-                            <button class="btn btn-brand" id="send-button" type="submit">Send Message</button>
-                        </div>
-                    </form>
+                <!-- The form -->
+                <form class="row g-3 p-lg-5 p-4 bg-white theme-shadow" id="chat" action="discussions.php" method="POST">
+                    <input type="hidden" name="reply_to" id="reply-to-input">
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" placeholder="Enter first name" id="username-input" name="name" required>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <textarea name="message" rows="5" class="form-control" placeholder="Enter Message" id="message-input" required></textarea>
+                    </div>
+                    <div class="form-group col-lg-12 d-grid">
+                        <button class="btn btn-brand" id="send-button" type="submit">Send Message</button>
+                    </div>
+                    <!-- Display the messages -->
+                    <div class="messages" id="messages">
+                    </div>
+                </form>
+
+                <script>
+                fetch('process.php')
+                    .then(response => response.json())
+                    .then(messages => {
+                        const messagesDiv = document.getElementById('messages');
+                        messages.forEach(message => {
+                            const messageDiv = document.createElement('div');
+                            messageDiv.className = 'form-group col-lg-12 message';
+                            messageDiv.innerHTML = `
+                                <p>
+                                    <span style="color: maroon;">${message.name}</span>: 
+                                    <span style="color: black; font-size: 15px;">${message.content}</span>
+                                </p>
+                            `;
+                            messagesDiv.appendChild(messageDiv);
+                        });
+                    });
+                </script>
                 </div> 
             </div>  
         </div>
@@ -271,7 +297,7 @@
             </div>
             <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
                 <div class="col-lg-8">
-                    <form id="container" class="row g-3 p-lg-5 p-4 bg-white theme-shadow" action="form_handler.php" method="post" enctype="multipart/form-data">
+                    <form id="container" class="row g-3 p-lg-5 p-4 bg-white theme-shadow" action="upload.php" method="post" enctype="multipart/form-data">
                         <select id="Modules" name="Modules" class="form-control">
                             <optgroup label="Modules" class="form-control">
                                 <option value="RD412">RD412</option>
@@ -293,10 +319,31 @@
                             <thead>
                                 <tr>
                                     <th>Resource Name</th>
+                                    <th>Type</th>
                                     <th>Download</th>
                                 </tr>
                             </thead>
-                            <tbody id="fileList"></tbody>
+                                <table id="files">
+                                    <!-- The file data will be inserted here -->
+                                </table>
+
+                                <script>
+                                    fetch('fetch_files.php')
+                                        .then(response => response.json())
+                                        .then(files => {
+                                            const filesTable = document.getElementById('files');
+                                            files.forEach(file => {
+                                                const row = document.createElement('tr');
+                                                row.innerHTML = `
+                                                    <td>${file.name}</td>
+                                                    <td>${file.type}</td>
+                                                    <td><a href="download.php?id=${file.id}" style="display: block; height: 100%; width: 100%;">Download</a></td>
+                                                `;
+                                                filesTable.appendChild(row);
+                                            });
+                                        })
+                                        .catch(error => console.error('Error:', error));
+                                </script>
                         </table>
                     </form>
                     
@@ -540,7 +587,45 @@
     </footer>
 
     <!-- Javascript -->
-        
+    <script>
+    function uploadFile() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const formData = new FormData();
+        formData.append('myfile', file);
+
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            console.log('Success:', result);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    function uploadFile() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const formData = new FormData();
+        formData.append('myfile', file);
+
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            console.log('Success:', result);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+    </script>
     <script>
         window.onload = function() {
         fetch('get_messages.php')
@@ -575,7 +660,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="/assets/js/share.js"></script>
     <script src="/assets/js/discussion.js"></script>
 </body>
 </html>
